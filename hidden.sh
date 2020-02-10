@@ -1,5 +1,4 @@
 setup () {
-	ban
 	clear
 	figlet HiddenEye|toilet -f term -F gay
 	echo
@@ -55,11 +54,14 @@ setup () {
 	files () {
 		cd ~/HiddenEye-2
 		clear
-		printf "\n\033[92m please wait downloading webpages\n"
+		mkdir WebPages
+		cd WebPages
+		printf "\n\033[92m please wait downloading webpages\n\n\033[0m"
 		wget https://github.com/rooted-cyber/good/raw/master/Hidden/WebPages1.zip
 		wget https://github.com/rooted-cyber/good/raw/master/Hidden/WebPages2.zip
 		clear
-		printf "\n Downloading hiddeneye files\n"
+		cd ~/HiddenEye-2
+		printf "\n\033[93m Downloading hiddeneye files\n\n\033[0m"
 		wget https://github.com/rooted-cyber/good/raw/master/Hidden/HiddenEye.zip
 		check-zip
 		}
@@ -72,16 +74,10 @@ setup () {
 			fi
 			}
 		unz () {
-			cd ~/HiddenEye-2
-			mkdir WebPages
-			cp -f WebPages* ~/HiddenEye-2/Webpages
-			rm -f Webpages1.zip
-			rm -f WebPages2.zip
-			rm -f HiddenEye.zip
 			unzip HiddenEye.zip
 			cd WebPages
-			unzip Webpages1.zip
-			unzip WebPages2.zip
+			unzip WebPages1.zip
+			unzip Webpages2.zip
 			}
 			star () {
 				cd $PREFIX/bin
