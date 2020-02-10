@@ -18,8 +18,22 @@ setup () {
 	chmod 777 $PREFIX/bin/hiddeneye
 	clear
 	printf "\n\033[93m Now You Can Use This command :- hiddeneye\n"
-	files
+	printf "\n\n Press enter to continue\n"
+	read
+	che
+	pyc
 	}
+	pyc () {
+		cd ~/HiddenEye-2
+		if [ -e HiddenEye.py ];then
+		star
+		else
+		unzip HiddenEye.zip
+		cd WebPages
+		unzip WebPages1.zip
+		unzip WebPages2.zip
+		fi
+		}
 	ban() {
 		cd $PREFIX/bin
 		if [ -e toilet ];then
@@ -50,6 +64,14 @@ setup () {
 	apt install proot
 	check
 	}
+	che() {
+		cd ~/HiddenEye-2
+		if [ -e HiddenEye.zip ];then
+		pyc
+		else
+		files
+		fi
+		}
 			
 	files () {
 		cd ~/HiddenEye-2
