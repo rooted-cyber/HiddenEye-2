@@ -1,6 +1,6 @@
 setup () {
 	clear
-	figlet HiddenEye|toilet -f term -F gay
+	figlet HiddenEye-2|toilet -f term -F gay
 	echo
 	apt update
 	apt upgrade
@@ -12,17 +12,26 @@ setup () {
 	apt install proot
 	apt install curl
 	check
-	echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/hiddeneye
-	echo "cd HiddenEye-2" >> $PREFIX/bin/hiddeneye
-	echo "bash hidden.sh" >> $PREFIX/bin/hiddeneye
-	chmod 777 $PREFIX/bin/hiddeneye
+	echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/hiddeneye-2
+	echo "cd HiddenEye-2" >> $PREFIX/bin/hiddeneye-2
+	echo "bash hidden.sh" >> $PREFIX/bin/hiddeneye-2
+	chmod 777 $PREFIX/bin/hiddeneye-2
 	clear
-	printf "\n\033[93m Now You Can Use This command :- hiddeneye\n"
+	printf "\n\033[93m Now You Can Use This command :- hiddeneye-2\n"
 	printf "\n\n Press enter to continue\n"
 	read
 	che
 	pyc
+	io
 	}
+	io() {
+		cd ~/HiddenEye-2/WebPages
+		if [ -e ip.php ];then
+		echo
+		else
+		unzip WebPages2.zip
+		fi
+		}
 	pyc () {
 		cd ~/HiddenEye-2
 		if [ -e HiddenEye.py ];then
