@@ -12,6 +12,9 @@ setup () {
 	apt install proot
 	apt install curl
 	check
+	che
+	pyc
+	io
 	echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/hiddeneye-2
 	echo "cd HiddenEye-2" >> $PREFIX/bin/hiddeneye-2
 	echo "bash hidden.sh" >> $PREFIX/bin/hiddeneye-2
@@ -20,9 +23,7 @@ setup () {
 	printf "\n\033[93m Now You Can Use This command :- hiddeneye-2\n"
 	printf "\n\n Press enter to continue\n"
 	read
-	che
-	pyc
-	io
+	
 	}
 	io() {
 		cd ~/HiddenEye-2/WebPages
@@ -121,7 +122,7 @@ setup () {
 				}
 				
 			cd $PREFIX/bin
-			if [ -e hiddeneye ];then
+			if [ -e hiddeneye-2 ];then
 			star
 			else
 			setup
