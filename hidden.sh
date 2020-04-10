@@ -1,20 +1,229 @@
-setup () {
-	clear
-	figlet HiddenEye-2|toilet -f term -F gay
-	echo
+R () {
+	#cd /sdcard/Int*/Git*/Hidd*
+	echo -e "\033[0m"
+	cd $PREFIX/bin
+	if [ -e python ];then
+	cd ~/HiddenEye-2
+	python .random.py
+	else
+	cd ~/HiddenEye-2
+	fi
+	}
+	folder () {
+		cd $PREFIX/bin
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		checking-unzip-files () {
+			cd ~/HiddenEye-2
+			if [ -e HiddenEye.py ];then
+			R
+			printf "\n\n Successfully unzip HiddenEye.zip\n"
+			else
+			unzip-zip
+			fi
+			if [ -e WebPages ];then
+			R
+			printf "\n Successfully Unzip WebPages\n"
+			else
+			unzip-zip
+			fi
+			}
+		unzip-zip () {
+			cd ~/HiddenEye-2
+			if [ -e HiddenEye.py ];then
+			echo
+			else
+			unzip HiddenEye.zip
+			fi
+			if [ -e WebPages ];then
+			echo
+			else
+			mkdir WebPages
+			cp -f WebPages1.zip ~/HiddenEye-2/WebPages
+			cp -f WebPages2.zip ~/HiddenEye-2/WebPages
+			cd WebPages
+			unzip WebPages1.zip
+			unzip WebPages2.zip
+			fi
+			}
+	checking-files () {
+		cd ~/HiddenEye-2
+		if [ -e WebPages1.zip ] || [ -e WebPages2.zip ] || [ -e HiddenEye.zip ];then
+		R
+		printf "\n Successfly All download\n"
+		else
+		Downloading-files
+		fi
+		}
+	Downloading-files () {
+		R
+		cd ~/HiddenEye-2
+		if [ -e WebPages1.zip ];then
+		echo
+		else
+		printf "\nDownloading Webpages1\n"
+		wget https://github.com/rooted-cyber/good/raw/master/Hidden/WebPages1.zip
+		fi
+		if [ -e WebPages2.zip ];then
+		echo
+		else
+		R
+		printf  "\n Downloading WebPages2\n"
+		wget https://github.com/rooted-cyber/good/raw/master/Hidden/WebPages2.zip
+		fi
+		if [ -e HiddenEye.zip ];then
+		echo
+		else
+		R
+		printf "\n Downloading HiddenEye files\n"
+		wget https://github.com/rooted-cyber/good/raw/master/Hidden/HiddenEye.zip
+		fi
+		}
+		
+	proot-package () {
+		folder
+		if [ -e proot ];then
+		R
+		printf "\n\n Successfully installed proot"
+		else
+		printf "\n\n\033[91m [×] Not install proot , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		php-package () {
+		folder
+		if [ -e php ];then
+		R
+		printf "\n\n Successfully installed php"
+		else
+		printf "\n\n\033[91m [×] Not install php , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		wget-package () {
+		folder
+		if [ -e wget ];then
+		R
+		printf "\n\n Successfully installed wget"
+		else
+		printf "\n\n\033[91m [×] Not install wget , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		python-package () {
+		folder
+		if [ -e python ];then
+		R
+		R
+		printf "\n Successfully installed python"
+		else
+		printf "\n\n\033[91m [×] Not install python , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		openssh-package () {
+		folder
+		if [ -e ssh ];then
+		R
+		printf "\n\n Successfully installed openssh"
+		else
+		printf "\n\n\033[91m [×] Not install openssh , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		figlet-package () {
+		folder
+		if [ -e figlet ];then
+		R
+		printf "\n\n Successfully installed figlet"
+		else
+		printf "\n\n\033[91m [×] Not install figlet , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		toilet-package () {
+		folder
+		if [ -e toilet ];then
+		R
+		printf "\n\n Successfully installed toilet"
+		else
+		printf "\n\n\033[91m [×] Not install toilet , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		curl-package () {
+		folder
+		if [ -e curl ];then
+		R
+		printf "\n\n Successfully installed curl"
+		else
+		printf "\n\n\033[91m [×] Not install curl , Try again !! \n"
+		read
+		packages_install
+		fi
+		}
+		
+	checking-installation () {
+		proot-package
+		sleep 0.4
+		wget-package
+		sleep 0.4
+		curl-package
+		sleep 0.4
+		php-package
+		sleep 0.4
+		openssh-package
+		sleep 0.4
+		python-package
+		sleep 0.4
+		figlet-package
+		sleep 0.4
+		toilet-package
+		}
+	
+	packages_install () {
+		R
+		printf "\n\n Installing Packages.....\n\n"
 	apt update
 	apt upgrade
-	apt install git
-	apt install python
-	apt install wget
-	apt install openssh
-	apt install php
 	apt install proot
+	apt install wget
 	apt install curl
-	check
-	che
-	pyc
-	io
+	apt install php
+	apt install openssh
+	apt install python
+	apt install figlet
+	apt install toilet
+	clear
+	R
+	printf "\n\n Checking packages\n"
+	checking-installation
+	sleep 2
+	Downloading-files
+	R
+	printf "\n Checking Downloading Files\n"
+	checking-files
+	sleep 2
+	unzip-zip
+	checking-unzip-files
+	sleep 2
 	echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/hiddeneye-2
 	echo "cd HiddenEye-2" >> $PREFIX/bin/hiddeneye-2
 	echo "bash hidden.sh" >> $PREFIX/bin/hiddeneye-2
@@ -23,108 +232,17 @@ setup () {
 	printf "\n\033[93m Now You Can Use This command :- hiddeneye-2\n"
 	printf "\n\n Press enter to continue\n"
 	read
+	}
 	
-	}
-	io() {
-		cd ~/HiddenEye-2/WebPages
-		if [ -e ip.php ];then
-		echo
-		else
-		unzip WebPages2.zip
-		fi
-		}
-	pyc () {
-		cd ~/HiddenEye-2
-		if [ -e HiddenEye.py ];then
-		star
-		else
-		unzip HiddenEye.zip
-		cd WebPages
-		unzip WebPages1.zip
-		unzip WebPages2.zip
-		fi
-		}
-	ban() {
-		cd $PREFIX/bin
-		if [ -e toilet ];then
-		echo
-		else
-		pkg install toilet
-		pkg install figlet
-		fi
-		}
-	check() {
-		cd $PREFIX/bin
-		if [ -e wget ];then
-		echo "wget is installed"
-		else
-		ins
-		fi
-		}
-		ins () {
-			clear
-	apt update
-	apt upgrade
-	apt install git
-	apt install python
-	apt install wget
-	apt install openssh
-	apt install php
-	apt install curl
-	apt install proot
-	check
-	}
-	che() {
-		cd ~/HiddenEye-2
-		if [ -e HiddenEye.zip ];then
-		pyc
-		else
-		files
-		fi
-		}
-			
-	files () {
-		cd ~/HiddenEye-2
-		clear
-		mkdir WebPages
-		cd WebPages
-		printf "\n\033[92m please wait downloading webpages\n\n\033[0m"
-		wget https://github.com/rooted-cyber/good/raw/master/Hidden/WebPages1.zip
-		wget https://github.com/rooted-cyber/good/raw/master/Hidden/WebPages2.zip
-		clear
-		cd ~/HiddenEye-2
-		printf "\n\033[93m Downloading hiddeneye files\n\n\033[0m"
-		wget https://github.com/rooted-cyber/good/raw/master/Hidden/HiddenEye.zip
-		check-zip
-		}
-		check-zip () {
-			cd ~/HiddenEye-2
-			if [ -e HiddenEye.zip ];then
-			unz
-			else
-			files
-			fi
-			}
-		unz () {
-			unzip HiddenEye.zip
-			cd WebPages
-			unzip WebPages1.zip
-			unzip Webpages2.zip
-			}
-			star () {
-				cd $PREFIX/bin
-				if [ -e proot ];then
-				cd ~/HiddenEye-2
-				proot -0 python3 HiddenEye.py
-				else
-				ins
-				fi
-				}
-				
-			cd $PREFIX/bin
-			if [ -e hiddeneye-2 ];then
-			star
-			else
-			setup
-			fi
-			
+	
+	cd $PREFIX/bin
+	if [ -e hiddeneye-2 ];then
+	echo
+	else
+	packages_install
+	fi
+	cd ~/HiddenEye-2
+	proot -0 python HiddenEye.py
+	
+	
+	
