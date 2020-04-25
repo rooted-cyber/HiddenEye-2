@@ -227,6 +227,8 @@ R () {
 	unzip-zip
 	checking-unzip-files
 	sleep 2
+	cd ~/HiddenEye-2
+	pip install -r req*
 	echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/hiddeneye-2
 	echo "cd HiddenEye-2" >> $PREFIX/bin/hiddeneye-2
 	echo "bash hidden.sh" >> $PREFIX/bin/hiddeneye-2
@@ -245,7 +247,7 @@ R () {
 $ apt update
 $ apt upgrade
 $ apt install git
-$ cd $?HOME
+$ cd ?$?H?OM???E?
 $ git clone https://github.com/rooted-cyber/HiddenEye-2
 $ cd HiddenEye-2
 $ bash hidden.sh
@@ -259,7 +261,7 @@ printf "\n\n\n \033[96m And wait for installing and starting command :- hiddeney
 	seti() {
 		cd $PREFIX/bin
 	if [ -e hiddeneye-2 ];then
-	cd ~/HiddenEye-2
+	cd ~/HiddenEye-2 > /dev/null 2>&1
 	proot -0 python HiddenEye.py
 	else
 	packages_install
