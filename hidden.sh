@@ -6,7 +6,10 @@ R () {
 	cd ~/HiddenEye-2
 	python .random.py
 	else
+	pkg install python
+	clear
 	cd ~/HiddenEye-2
+	python .random.py
 	fi
 	}
 	folder () {
@@ -96,7 +99,7 @@ R () {
 		R
 		printf "\n\n Successfully installed proot"
 		else
-		printf "\n\n\033[91m [×] Not install proot , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install proot , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -107,7 +110,7 @@ R () {
 		R
 		printf "\n\n Successfully installed php"
 		else
-		printf "\n\n\033[91m [×] Not install php , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install php , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -118,7 +121,7 @@ R () {
 		R
 		printf "\n\n Successfully installed wget"
 		else
-		printf "\n\n\033[91m [×] Not install wget , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install wget , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -130,7 +133,7 @@ R () {
 		R
 		printf "\n Successfully installed python"
 		else
-		printf "\n\n\033[91m [×] Not install python , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install python , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -141,7 +144,7 @@ R () {
 		R
 		printf "\n\n Successfully installed openssh"
 		else
-		printf "\n\n\033[91m [×] Not install openssh , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install openssh , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -152,7 +155,7 @@ R () {
 		R
 		printf "\n\n Successfully installed figlet"
 		else
-		printf "\n\n\033[91m [×] Not install figlet , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install figlet , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -163,7 +166,7 @@ R () {
 		R
 		printf "\n\n Successfully installed toilet"
 		else
-		printf "\n\n\033[91m [×] Not install toilet , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install toilet , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -174,7 +177,7 @@ R () {
 		R
 		printf "\n\n Successfully installed curl"
 		else
-		printf "\n\n\033[91m [×] Not install curl , Try again !! \n"
+		printf "\n\n\033[91m [?] Not install curl , Try again !! \n"
 		read
 		packages_install
 		fi
@@ -233,16 +236,41 @@ R () {
 	printf "\n\n Press enter to continue\n"
 	read
 	}
+	fool () {
+		clear
+		printf "\n\n \033[1;91m You are tottally mad.\n"
+		printf "\n First learn basic then install hiddeneye-2\n\n"
+		printf "\033[1;93m Follow instruction to install hiddeneye-2\n\n\033[0m"
+		printf "\n\033[1;4;77m
+$ apt update
+$ apt upgrade
+$ apt install git
+$ cd $?HOME
+$ git clone https://github.com/rooted-cyber/HiddenEye-2
+$ cd HiddenEye-2
+$ bash hidden.sh
+\033[0m"
+printf "\n\n\n \033[96m And wait for installing and starting command :- hiddeneye-2\n\n\033[0m"
+}
+
+		
 	
 	
-	cd $PREFIX/bin
+	seti() {
+		cd $PREFIX/bin
 	if [ -e hiddeneye-2 ];then
-	echo
+	cd ~/HiddenEye-2
+	proot -0 python HiddenEye.py
 	else
 	packages_install
 	fi
-	cd ~/HiddenEye-2
-	proot -0 python HiddenEye.py
+	}
+	cd ~
+	if [ -e HiddenEye-2 ];then
+	seti
+	else
+	fool
+	fi
 	
 	
 	
