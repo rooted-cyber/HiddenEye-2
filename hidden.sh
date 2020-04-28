@@ -247,7 +247,7 @@ R () {
 $ apt update
 $ apt upgrade
 $ apt install git
-$ cd ?$?H?OM???E?
+$ cd $‌H‌OME‌
 $ git clone https://github.com/rooted-cyber/HiddenEye-2
 $ cd HiddenEye-2
 $ bash hidden.sh
